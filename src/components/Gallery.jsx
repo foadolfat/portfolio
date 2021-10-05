@@ -26,50 +26,52 @@ function Gallery(){
 
     
     return (
-        <div className=" h-full no-scrollbar overflow-hidden">
-            <div className="flex relative h-screen ">
+        <div className="o-scrollbar overflow-hidden">
+            <div className="flex relative">
                 <div  className={
-                    pageOne ? "flex flex-col transition-all duration-750 ease-in-out  w-full h-full p-4 overflow-y-auto bg-page-background"
-                            : "flex flex-col transition-all duration-750 ease-in-out  w-1/3 h-full p-4 overflow-y-auto bg-page-background"
+                    pageOne ? "flex flex-col transition-all duration-750 ease-in-out w-full overflow-y-auto bg-page-background"
+                            : "flex flex-col transition-all duration-750 ease-in-out w-1/3 overflow-y-auto bg-page-background"
                     }>
                     
-                    <div className={
-                            pageOne ? "flex flex-col h-full w-full"
-                                    : "flex flex-col h-full w-full"
-                            }>
-                        <div className="w-full h-full">
+                    <div className="flex flex-wrap justify-between h-screen"
+                            // {
+                            // pageOne ? "flex flex-col h-full w-full"
+                            //         : "flex flex-col h-full w-full"
+                            // }
+                            >
+                        <div className="w-full h-1/2">
                             <Profile/>
                         </div>
-                        <div className="w-full h-full flex flex-wrap">
-                            <button className="w-96 h-96 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                        <div className="flex flex-wrap">
+                            <button className="w-60 h-40 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
                                     onClick={() => {
                                                 parallax.scrollTo(0);
                                                 handleClick(0);
                                             }}>
                                 Go 1
                             </button>
-                            <button className="w-96 h-96 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                            <button className="w-60 h-40 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
                                     onClick={() => {
                                                 parallax.scrollTo(1);
                                                 handleClick(1);
                                             }}>
                                 Go 2
                             </button>
-                            <button className="w-96 h-96 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                            <button className="w-60 h-40 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
                                     onClick={() => {
                                                 parallax.scrollTo(2);
                                                 handleClick(2);
                                             }}>
                                 Go 3
                             </button>
-                            <button className="w-96 h-96 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                            <button className="w-60 h-40 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
                                     onClick={() => {
                                                 parallax.scrollTo(3);
                                                 handleClick(3);
                                             }}>
                                 Go 4
                             </button>
-                            <button className="w-96 h-96 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                            <button className="w-60 h-40 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
                                     onClick={() => {
                                                 parallax.scrollTo(4);
                                                 handleClick(4);
@@ -81,7 +83,7 @@ function Gallery(){
                     
                 </div>
                 
-                <div className="h-screen">
+                <div className="">
                     <Parallax className="overflow-hidden" pages={5} enabled={true} ref={ref => parallax = ref} horizontal={true} >
                         <ParallaxLayer className="" offset={1} speed={0.25}>
                             <div className="w-2/3 h-full bg-gray-700 text-white">
