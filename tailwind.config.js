@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      transitionProperty: {
+        'width': 'width'
+      },
       width:{
         "5v": "5vw",
         "10v": "10vw",
@@ -24,6 +27,8 @@ module.exports = {
         "90v": "90vw",
         "95v": "95vw",
 			"100v": "100vw",
+        "1":"1px",
+        "90":"90px",
         "100":"100px",
         "150":"150px",
         "200":"200px",

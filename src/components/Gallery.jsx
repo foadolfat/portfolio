@@ -2,7 +2,7 @@ import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Parallax, ParallaxLayer} from '@react-spring/parallax'
 import Profile from "./Profile";
 
 function Gallery(){
@@ -12,6 +12,7 @@ function Gallery(){
     React.useEffect(()=>{
         
     }, [])
+
     const handleClick = (page) => {
         if(pageOne && page !== 0){
             setPageOne(false);
@@ -26,58 +27,80 @@ function Gallery(){
 
     
     return (
-        <div className="o-scrollbar overflow-hidden">
-            <div className="flex relative">
+        <div className="no-scrollbar overflow-hidden">
+            <div className="flex relative h-screen">
                 <div  className={
                     pageOne ? "flex flex-col transition-all duration-750 ease-in-out w-full overflow-y-auto bg-page-background"
                             : "flex flex-col transition-all duration-750 ease-in-out w-1/3 overflow-y-auto bg-page-background"
                     }>
                     
-                    <div className="flex flex-wrap justify-between h-screen"
-                            // {
-                            // pageOne ? "flex flex-col h-full w-full"
-                            //         : "flex flex-col h-full w-full"
-                            // }
-                            >
-                        <div className="flex w-full h-1/2">
-                            <Profile/>
+                    <div className={
+                             pageOne ? "flex"
+                                     : "flex"
+                             }>
+                        <div className="">
+                            <Profile pageOne={pageOne}/>
                         </div>
-                        <div className="flex-wrap justify-center w-auto m-auto">
-                            <button className="w-96 h-60 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
-                                    onClick={() => {
-                                                parallax.scrollTo(0);
-                                                handleClick(0);
-                                            }}>
-                                Go 1
-                            </button>
-                            <button className="w-96 h-60 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
-                                    onClick={() => {
-                                                parallax.scrollTo(1);
-                                                handleClick(1);
-                                            }}>
-                                Go 2
-                            </button>
-                            <button className="w-96 h-60 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
-                                    onClick={() => {
-                                                parallax.scrollTo(2);
-                                                handleClick(2);
-                                            }}>
-                                Go 3
-                            </button>
-                            <button className="w-96 h-60 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
-                                    onClick={() => {
-                                                parallax.scrollTo(3);
-                                                handleClick(3);
-                                            }}>
-                                Go 4
-                            </button>
-                            <button className="w-96 h-60 bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
-                                    onClick={() => {
-                                                parallax.scrollTo(4);
-                                                handleClick(4);
-                                            }}>
-                                Go 5
-                            </button>
+                        <div className={
+                             pageOne ? "flex-wrap h-full w-full "
+                                     : "flex-wrap h-full w-full "
+                             }> 
+                            <div className="flex justify-center items-center w-min m-auto">
+                                
+                                <div className="flex-wrap">
+                                    <div className="text-center">
+                                        <h1>Foad Olfat</h1>
+                                        <p1>olfatfoad@gmail.com</p1>
+                                        <br/>
+                                        <p1>916-540-8480</p1>
+                                    </div>
+                                    <button className="w-96 h-40
+                                                        
+                                                       bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                                            onClick={() => {
+                                                        parallax.scrollTo(0);
+                                                        handleClick(0);
+                                                    }}>
+                                        Go 1
+                                    </button>
+                                    <button className="w-96 h-40
+                                                        
+                                                       bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                                            onClick={() => {
+                                                        parallax.scrollTo(1);
+                                                        handleClick(1);
+                                                    }}>
+                                        Go 2
+                                    </button>
+                                    <button className="w-96 h-40
+                                                        
+                                                       bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                                            onClick={() => {
+                                                        parallax.scrollTo(2);
+                                                        handleClick(2);
+                                                    }}>
+                                        Go 3
+                                    </button>
+                                    <button className="w-96 h-40
+                                                        
+                                                       bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                                            onClick={() => {
+                                                        parallax.scrollTo(3);
+                                                        handleClick(3);
+                                                    }}>
+                                        Go 4
+                                    </button>
+                                    <button className="w-96 h-40
+                                                        
+                                                       bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+                                            onClick={() => {
+                                                        parallax.scrollTo(4);
+                                                        handleClick(4);
+                                                    }}>
+                                        Go 5
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -147,3 +170,83 @@ export default Gallery;
 //                     </Carousel.Item>
 //                 </Carousel>
 //             </div>
+
+
+
+
+// <div  className={
+//                     pageOne ? "flex flex-col transition-all duration-750 ease-in-out w-full overflow-y-auto bg-page-background"
+//                             : "flex flex-col transition-all duration-750 ease-in-out w-1/3 overflow-y-auto bg-page-background"
+//                     }>
+                    
+//                     <div className="flex">
+//                         <div className={
+//                              pageOne ? ""
+//                                      : "hidden"
+//                              }>
+//                             <Profile pageOne={pageOne}/>
+//                         </div>
+//                         <div className={
+//                              pageOne ? "flex-wrap h-full w-full "
+//                                      : "flex-wrap h-full w-full "
+//                              }> 
+//                             <div className="flex justify-center items-center w-min m-auto">
+                                
+//                                 <div className="flex-wrap">
+//                                     <div className="text-center">
+//                                         <h1>Foad Olfat</h1>
+//                                         <p1>olfatfoad@gmail.com</p1>
+//                                         <br/>
+//                                         <p1>916-540-8480</p1>
+//                                     </div>
+//                                     <button className="w-96 h-40
+                                                        
+//                                                        bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+//                                             onClick={() => {
+//                                                         parallax.scrollTo(0);
+//                                                         handleClick(0);
+//                                                     }}>
+//                                         Go 1
+//                                     </button>
+//                                     <button className="w-96 h-40
+                                                        
+//                                                        bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+//                                             onClick={() => {
+//                                                         parallax.scrollTo(1);
+//                                                         handleClick(1);
+//                                                     }}>
+//                                         Go 2
+//                                     </button>
+//                                     <button className="w-96 h-40
+                                                        
+//                                                        bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+//                                             onClick={() => {
+//                                                         parallax.scrollTo(2);
+//                                                         handleClick(2);
+//                                                     }}>
+//                                         Go 3
+//                                     </button>
+//                                     <button className="w-96 h-40
+                                                        
+//                                                        bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+//                                             onClick={() => {
+//                                                         parallax.scrollTo(3);
+//                                                         handleClick(3);
+//                                                     }}>
+//                                         Go 4
+//                                     </button>
+//                                     <button className="w-96 h-40
+                                                        
+//                                                        bg-surface m-2 rounded-lg hover:bg-gray-800 hover:text-white"
+//                                             onClick={() => {
+//                                                         parallax.scrollTo(4);
+//                                                         handleClick(4);
+//                                                     }}>
+//                                         Go 5
+//                                     </button>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+                    
+//                 </div>
