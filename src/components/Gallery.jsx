@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
 import { Parallax, ParallaxLayer} from '@react-spring/parallax'
 import Profile from "./Profile";
+import ASB from "./Projects/ASB";
 
 function Gallery(){
     let parallax;
@@ -27,7 +28,7 @@ function Gallery(){
 
     
     return (
-        <div className="no-scrollbar overflow-hidden">
+        <div className="no-scrollbar overflow-x-hidden">
             <div className="flex relative h-screen">
                 <div  className={
                     pageOne ? "flex flex-col transition-all duration-750 ease-in-out w-full overflow-y-auto bg-page-background"
@@ -42,8 +43,8 @@ function Gallery(){
                             <Profile pageOne={pageOne}/>
                         </div>
                         <div className={
-                             pageOne ? "flex-wrap h-full w-full "
-                                     : "flex-wrap h-full w-full "
+                             pageOne ? "flex-wrap h-full w-full"
+                                     : "flex-wrap h-full w-full"
                              }> 
                             <div className="flex justify-center items-center w-min m-auto">
                                 
@@ -108,9 +109,9 @@ function Gallery(){
                 
                 <div className="">
                     <Parallax className="overflow-hidden" pages={5} enabled={true} ref={ref => parallax = ref} horizontal={true} >
-                        <ParallaxLayer className="" offset={1} speed={0.25}>
-                            <div className="w-2/3 h-full bg-gray-700 text-white">
-                                World2
+                        <ParallaxLayer className="overflow-auto" offset={1} speed={0.25}>
+                            <div className="w-2/3 h-full text-white">
+                                <ASB/>
                             </div>
                         </ParallaxLayer>
                         <ParallaxLayer className="" offset={2} speed={0.25}>

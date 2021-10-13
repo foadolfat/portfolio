@@ -1,8 +1,9 @@
 import Profile from "./components/Gallery";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <div className="">
-      <Profile></Profile>
+      <BrowserRouter><Profile/></BrowserRouter>
     </div>
   );
 }
